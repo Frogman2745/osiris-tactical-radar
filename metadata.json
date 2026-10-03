@@ -1,0 +1,6 @@
+{
+  "name": "AxiomBI — AI Operations & Predictive BI Platform",
+  "description": "Enterprise AI operations platform for automated ETL pipelines, SQL & Python analytical workflows, predictive business intelligence dashboards, real-time collaborative reporting, and job portfolio tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
