@@ -95,17 +95,17 @@ const state: CollaborationState = {
 ---
 
 ## 1. Executive Summary & Fleet Readiness
-Over the last rolling 30-day operating window, dispatch-to-drop turnaround times averaged **16.2 minutes**, surpassing the state-level SLA threshold of 20.0 minutes by **19.0%**. Mixed-fleet coordination across 8 primary air attack and helitack assets yielded a **94.8% mission-readiness rating**, with 0 critical flight cancellations.
+This report is generated from a synthetic 30-day demonstration scenario. Its values illustrate the reporting workflow and are not agency performance records or field-validated benchmarks.
 
 - **Total Retardant & Suppressant Delivered:** 428,500 gallons
 - **Active Missions Coordinated:** 142 tactical sorties
-- **CP-SAT Mathematical Optimization Gain:** +23.4% faster resource commitment compared to closest-resource naive baseline
+- **Allocation Comparison:** Demonstration comparison between a constraint-based assignment and a closest-resource baseline
 - **Predicted Resource Pressure (Next 14 Days):** Elevated in Northern District (Redding / Humboldt sector) due to projected dry lightning patterns.
 
 ---
 
 ## 2. Automated ETL & Data Quality Health
-The AxiomBI continuous ingestion pipeline processed **4.82M operational telemetry rows** across PostgreSQL and flight dispatch APIs with a **99.98% clean delivery rate**.
+The demonstration pipeline models ingestion, validation, quarantine, and delivery stages using generated records.
 - **Anomaly Detection:** Flagged 2 turnaround spikes (>25 mins) at McClellan Base during peak surge hours; resolved via ground crew re-sequencing.
 - **Automated Schema Drift Protection:** Zero unmapped field errors recorded.
 
@@ -739,7 +739,7 @@ const monitoredEndpointsData: any[] = [
     timingBreakdown: { dnsLookupMs: 4.5, tcpConnectMs: 8.2, tlsHandshakeMs: 11.4, timeToFirstByteMs: 28.5, contentDownloadMs: 3.4 },
     recentAlerts: [],
     samplePayload: {
-      request: { headers: { 'Authorization': 'Bearer calfire_cad_token', 'Agency-ID': 'CALFIRE-SAC' } },
+      request: { headers: { 'Authorization': 'Bearer synthetic-demo-placeholder', 'Scenario-ID': 'OSIRIS-DEMO' } },
       response: { activeSorties: 14, primaryFrequenciesActive: ['124.050 MHz', '122.925 MHz'] }
     }
   },
@@ -1173,7 +1173,7 @@ Pipeline Metadata:
 
 Requirements for the generated README Markdown:
 1. # Title: Executive Overview & Pipeline Architecture
-2. ## Business Purpose & Mission Impact (Explain how this supports wildfire aerial dispatch, CISRM 2026, and NWCG PMS 505 safety SLAs)
+2. ## Business Purpose & Mission Impact (Explain how this synthetic workflow explores wildfire aviation coordination without claiming agency integration or regulatory authority)
 3. ## DAG Topology & Stage Execution Flow (Describe Ingest -> Validate -> Transform -> Load stages, dependencies, and streaming buffers)
 4. ## Schema Invariants & Anomaly Defense (Detail transponder burst deduplication, Z-score outlier detection, and schema drift dead-lettering)
 5. ## Compute Quotas & Auto-Scaling Profile (Summarize CPU/RAM allocations and predictive scaling behavior)
@@ -1206,7 +1206,7 @@ Format with clean Markdown headers, bullet points, and code/schema blocks where 
     const fallbackMarkdown = `# Operational ETL Pipeline Architecture: ${templateName}
 
 ## 1. Business Purpose & Mission Impact
-The **${templateName}** workflow processes mission-critical telemetry from California wildfire aerial suppression airframes (CalFire AirTankers, Helitack, and Air Attack aircraft). It enforces **CISRM 2026** operational readiness standards and **NWCG PMS 505** turnaround time safety SLAs. The core objective is reducing turnaround dispatch latency by 23.4% while ensuring zero corrupt or drifting transponder packets reach analytical marts.
+The **${templateName}** workflow models generated wildfire-aviation telemetry for a portfolio simulation. It demonstrates dependency scheduling, schema validation, quarantine, and configurable scenario thresholds. It is not connected to CAL FIRE, NWCG, NASA, FAA, DoD, CAD, AFF, or IRWIN systems, and it does not encode a universal regulatory turnaround limit.
 
 ---
 
@@ -1278,8 +1278,14 @@ Candidate Background:
 - Key Project 1: Tankerline - Solo developer of decision-support prototype comparing closest-resource baseline vs Google OR-Tools CP-SAT allocation for concurrent wildfire incidents, CISRM 2026 rules, NWCG PMS 505.
 - Key Project 2: Froghaus Studios - Founder & developer building Next.js, Supabase/Postgres, Stripe Connect, phased client delivery methodology.
 - Key Project 3: AMD X870E Motherboard Sourced Competitive Analysis - Excel decision model, pricing sensitivity curves, customer segmentation.
-- Key Project 4: FleetOps Autonomous Sustainment Console - Deployed system triage, incident root cause, readiness telemetry.
+- Key Project 4: OSIRIS - React/TypeScript portfolio simulation with synthetic aviation scenarios, Canvas 2D rendering, DAG workflows, and Vitest coverage.
 - Skills: Python, TypeScript/JavaScript, SQL, Postgres, Pandas, APIs, Optimization, AI Agents, Prompt Engineering.
+
+Accuracy constraints:
+- Use only the candidate facts listed above.
+- Treat OSIRIS and Tankerline as prototypes using synthetic scenarios, not deployed agency systems.
+- Do not invent throughput, uptime, performance, revenue, client, operational-readiness, or benchmark figures.
+- If the job description requests an unsupported tool or qualification, identify the gap instead of claiming it.
 
 Target Role: ${targetRole || 'Data Analyst / AI Automation Engineer'}
 Job Description Snippet:
@@ -1287,12 +1293,12 @@ ${jobDescription.slice(0, 1500)}
 
 Generate a targeted alignment analysis in JSON format:
 {
-  "matchScore": 92,
+  "matchScore": 80,
   "topTargetedKeywords": ["ETL Pipelines", "PostgreSQL", "Predictive Analytics", "Process Automation"],
   "quantifiedBulletPoints": [
-    "Architected automated ETL pipelines in Python & TypeScript processing 4.8M+ operational records with 99.98% delivery rate...",
-    "Built CP-SAT constraint optimization engine in Python (Tankerline) achieving 23.4% faster resource allocation over greedy heuristics...",
-    "Managed real-time mixed-fleet telemetry across 8+ high-tempo aviation assets, maintaining 94.8% SLA readiness..."
+    "Built a React and TypeScript operations simulation with Canvas 2D geospatial views, configurable DAG workflows, and explicit synthetic-data provenance.",
+    "Developed a Python decision-support prototype using Google OR-Tools CP-SAT to model constrained wildfire aviation allocation.",
+    "Coordinated mixed-fleet CAL FIRE aviation activity in time-critical wildfire conditions and translated operational workflows into software requirements."
   ],
   "recommendedProofLinks": [
     {"title": "Tankerline CP-SAT Allocation Copilot", "proofType": "GitHub / Case Study", "relevance": "Demonstrates complex Python constraint solvers, operational dispatch logic, and data verification."},
@@ -1325,23 +1331,23 @@ Generate a targeted alignment analysis in JSON format:
 
     // High quality deterministic career analysis
     res.json({
-      matchScore: 94,
+      matchScore: 80,
       topTargetedKeywords: ['Automated ETL', 'SQL & Python Analytics', 'Predictive Modeling', 'Operations Telemetry', 'OR-Tools CP-SAT'],
       quantifiedBulletPoints: [
-        'Engineered continuous automated ETL and analytics pipelines processing 4.8M+ telemetry rows across PostgreSQL and REST APIs with 99.98% clean delivery.',
-        'Developed Tankerline decision-support copilot in Python using Google OR-Tools CP-SAT, yielding +23.4% faster resource allocation than naive closest-resource dispatch heuristics.',
-        'Coordinated mixed-fleet CAL FIRE aviation operations across 8+ aircraft types under rapidly changing fire conditions, maintaining real-time status in dispatch systems and zero critical schedule lapses.',
-        'Architected end-to-end client web applications with Next.js, Supabase/Postgres, and Stripe Connect, implementing repeatable delivery methodologies with zero client-side maintenance bottlenecks.'
+        'Built a React and TypeScript operations simulation with Canvas 2D geospatial views, configurable DAG workflows, WebSocket collaboration, and automated tests.',
+        'Developed a Python decision-support prototype using Google OR-Tools CP-SAT to model constrained wildfire aviation allocation with reproducible synthetic scenarios.',
+        'Coordinated mixed-fleet CAL FIRE aviation activity in time-critical wildfire conditions and translated operational workflows into software requirements.',
+        'Built full-stack web applications through Froghaus Studios using React, Next.js, Supabase/Postgres, APIs, and phased client delivery practices.'
       ],
       recommendedProofLinks: [
         { title: 'Tankerline: Aerial Resource Allocation Copilot', proofType: 'GitHub & Prototype', relevance: 'Demonstrates Python CP-SAT mathematical optimization, hard-constraint parsing, and reproducible synthetic scenarios.' },
-        { title: 'AxiomBI: Automated ETL & Predictive BI Console', proofType: 'Live Production Demo', relevance: 'Validates automated data pipelines, SQL/Python query execution, and real-time collaborative reporting.' },
+        { title: 'OSIRIS: Wildfire Operations Simulation', proofType: 'Open-Source Prototype', relevance: 'Demonstrates React/TypeScript architecture, synthetic-data provenance, configurable DAG workflows, and automated testing.' },
         { title: 'X870E Premium Hardware Competitive Model', proofType: 'Decision Model & Dashboard', relevance: 'Highlights sourced competitive analysis, pricing sensitivity formulas, and executive dashboard communication.' },
         { title: 'Froghaus Studios Client Delivery Systems', proofType: 'Live Client Work', relevance: 'Proves client discovery, production deployment, and resilient full-stack web software delivery.' }
       ],
       interviewTalkingPoints: [
         'Connect your CAL FIRE air base operations to software: you understand how real operators use data under pressure, not just theoretical models.',
-        'Emphasize outcome-driven metrics: +23.4% allocation speed, 99.98% pipeline reliability, and quantifiable client uptime.'
+        'Separate verified implementation evidence from synthetic scenario values and explain how the prototypes are tested.'
       ]
     });
   } catch (error) {

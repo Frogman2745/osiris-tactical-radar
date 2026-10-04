@@ -87,7 +87,7 @@ export const exportMarkdownToTacticalPdf = async (
     doc.setFont('courier', 'bold');
     doc.setFontSize(7);
     doc.setTextColor(colors.amber[0], colors.amber[1], colors.amber[2]);
-    doc.text('▲ TOP SECRET // TACTICAL AIR OPS // CAL FIRE & USFS DISPATCH', marginX + 6, 35);
+    doc.text('▲ PORTFOLIO SIMULATION // SYNTHETIC DATA // NOT FOR OPERATIONS', marginX + 6, 35);
 
     // Document Control ID
     doc.setFont('courier', 'bold');
@@ -155,7 +155,7 @@ export const exportMarkdownToTacticalPdf = async (
     ensureSpace(45);
     const kpis: KpiMetric[] = [
       { label: 'TURNAROUND SLA', value: '16.2 MIN (-19%)', color: colors.emerald },
-      { label: 'READINESS RATING', value: '94.8% OPTIMAL', color: colors.cyanBright },
+      { label: 'DATA MODE', value: 'SYNTHETIC SCENARIO', color: colors.cyanBright },
       { label: 'DELIVERED RETARDANT', value: '428,500 GAL', color: colors.skyAccent },
       { label: 'COMMITTED SORTIES', value: '142 TACTICAL', color: colors.amber },
     ];

@@ -1963,7 +1963,7 @@ export const CanvasTacticalRadarMap: React.FC<CanvasTacticalRadarMapProps> = ({
             </p>
           </div>
 
-          {/* Live Telemetry Specs Breakdown */}
+          {/* Generated Telemetry Specs Breakdown */}
           {hoveredTarget.specs && Object.keys(hoveredTarget.specs).length > 0 && (
             <div className="grid grid-cols-2 gap-1.5 pt-1.5 border-t border-slate-800/70 text-[9px]">
               {Object.entries(hoveredTarget.specs).map(([key, val]) => (

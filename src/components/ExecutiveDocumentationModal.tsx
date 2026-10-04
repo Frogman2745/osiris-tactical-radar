@@ -93,22 +93,22 @@ export const ExecutiveDocumentationModal: React.FC<ExecutiveDocumentationModalPr
       // Add all core files to zip
       folder?.file(
         '01_README_GITHUB.md',
-        `# OSIRIS: Wildfire Tactical Air Operations & DAG Pipeline Orchestrator\n\nAuthor: Nicholas Marnocha (Froghaus Studios · @Frogman2745)\nLive: https://froghausstudios.com\nGitHub: https://github.com/Frogman2745/osiris-tactical-radar\n\nHigh-throughput, real-time tactical air operations console and directed acyclic graph (DAG) compute orchestrator for interagency California wildfire suppression (CAL FIRE & DoD MAFFS wings).\n\nKey Highlights:\n- 60 FPS HTML5 Canvas Radar handling 2,200+ surge markers (<1.2ms frame latency)\n- 10 custom tactical aircraft vector silhouettes + hover telemetry HUD\n- Topological DAG compute orchestrator with Recharts CPU/RAM telemetry\n- 22 Vitest unit & integration tests passing with 0 errors`
+        `# OSIRIS: Wildfire Aviation Simulation & DAG Orchestrator\n\nAuthor: Nicholas Marnocha (Froghaus Studios · @Frogman2745)\nGitHub: https://github.com/Frogman2745/osiris-tactical-radar\n\nOSIRIS is a public-source portfolio simulation. It uses generated aircraft, incident, weather, base, and pipeline records; it is not affiliated with or connected to any agency system.\n\nImplemented features:\n- Canvas-based tactical visualization with 10 icon classes and hover inspection\n- Interactive DAG dependency orchestration with generated CPU/RAM telemetry\n- Local WebSocket state synchronization\n- Vitest, TypeScript, and production-build verification commands`
       );
 
       folder?.file(
         '02_USER_OPERATIONS_MANUAL.md',
-        `# OSIRIS Operator User Manual\n\n1. Tactical Radar: Use mouse wheel to zoom (0.7x-6.0x), click and drag to pan, switch presets (Statewide, NorCal, Central, SoCal), toggle Victor Airways, wind barbs, Class B terminal airspace, and active retardant drops.\n2. Symbology & Hover: Move cursor over any icon to illuminate in-canvas reticle [ ⌖ ] and see full role description and live telemetry (ALT, SPD, HDG, radio freq, payload).\n3. DAG Pipeline: View topological dependencies, trigger staged execution, inspect Recharts compute sidebar, and export DAG config JSON.\n4. Predictive SLAs: Track base turnaround times against the 20-min SLA and monitor Phos-Chek retardant stock.`
+        `# OSIRIS Operator User Manual\n\nAll displayed records are synthetic scenario data.\n\n1. Tactical Radar: Zoom, pan, switch regional presets, and toggle simulated airspace and weather layers.\n2. Symbology & Hover: Inspect generated altitude, speed, heading, frequency, and payload fields.\n3. DAG Pipeline: View dependencies, run the simulated stages, inspect generated resource telemetry, and export JSON.\n4. Scenario thresholds: Treat turnaround and stock values as editable demonstration parameters, not universal agency rules.`
       );
 
       folder?.file(
         '03_CASE_STUDY_ERRORS_AND_FIXES.md',
-        `# OSIRIS Engineering Case Study: Diagnostic Root Causes & Fixes\n\n1. Error: Split is not defined ReferenceError\nRoot Cause: Missing lucide-react import for Split icon + TS2322 title prop validation. Fixed by adding explicit imports and semantic wrapping.\n2. Error: JSX AST Toolbar Hierarchy Imbalance\nRoot Cause: Unclosed container <div> in sub-toolbar causing cascading TS1005 and TS1128 errors. Fixed via structural flexbox separation.\n3. Error: 60 FPS Canvas Render Loop Stale Closures\nRoot Cause: requestAnimationFrame loop captured initial state closure. Fixed with mutable useRef bridges (hoveredTargetRef, highlightedCategoryRef) for instantaneous zero-latency updates.\n4. Error: 2,200+ Surge Marker Frame Dropping\nRoot Cause: Context save/restore thrashing per marker. Fixed via batched path geometry rendering, achieving steady 60 FPS (<1.2ms frame duration).`
+        `# OSIRIS Engineering Case Study\n\n1. Resolved missing icon imports and strict prop mismatches.\n2. Corrected an unbalanced JSX toolbar hierarchy.\n3. Prevented animation-loop closure staleness with mutable refs.\n4. Reduced repeated Canvas context operations through batched drawing.\n\nPerformance results are intentionally omitted until a reproducible benchmark harness and captured results are included in the repository.`
       );
 
       folder?.file(
         '04_SYSTEM_ARCHITECTURE_AND_DIAGRAMS.md',
-        `# OSIRIS System Architecture & Schematics\n\nIncludes Client Viewport, 60 FPS HTML5 Canvas 2D engine, SVG Topological DAG Scheduler, Geodetic Inversion Math, and WebSocket state synchronization.`
+        `# OSIRIS System Architecture & Schematics\n\nIncludes the React viewport, Canvas 2D renderer, SVG DAG scheduler, coordinate projection, generated scenario state, and local WebSocket synchronization.`
       );
 
       folder?.file(
@@ -118,12 +118,12 @@ export const ExecutiveDocumentationModal: React.FC<ExecutiveDocumentationModalPr
 
       folder?.file(
         '06_PORTFOLIO_LINKEDIN_WEBSITE_GUIDE.md',
-        `# OSIRIS Portfolio, LinkedIn & Website Publishing Kit\n\nContains long-form LinkedIn case study, Twitter/X copy, Froghaus Studios portfolio card HTML, and quantified resume bullet points.`
+        `# OSIRIS Portfolio, LinkedIn & Website Publishing Kit\n\nContains provenance-safe LinkedIn copy, website copy, and resume bullets grounded in implemented features and current repository verification.`
       );
 
       folder?.file(
         '07_GITHUB_PUSH_INSTRUCTIONS.md',
-        `# GitHub Setup & Push Commands\n\ngit init -b main\ngit add .\ngit commit -m "feat(osiris): production-ready release"\ngit remote add origin https://github.com/Frogman2745/osiris-tactical-radar.git\ngit push -u origin main`
+        `# GitHub Setup & Push Commands\n\ngit init -b main\ngit add .\ngit commit -m "feat(osiris): publish simulation and documentation"\ngit remote add origin https://github.com/Frogman2745/osiris-tactical-radar.git\ngit push -u origin main`
       );
 
       folder?.file(
@@ -133,7 +133,7 @@ export const ExecutiveDocumentationModal: React.FC<ExecutiveDocumentationModalPr
 
       folder?.file(
         'push_to_github.sh',
-        `#!/usr/bin/env bash\nset -e\ngit init -b main\ngit add .\ngit commit -m "feat(osiris): production-ready release" || true\ngit remote add origin https://github.com/Frogman2745/osiris-tactical-radar.git 2>/dev/null || true\necho "Ready to push! Run: git push -u origin main"`
+        `#!/usr/bin/env bash\nset -e\ngit init -b main\ngit add .\ngit commit -m "feat(osiris): publish simulation and documentation" || true\ngit remote add origin https://github.com/Frogman2745/osiris-tactical-radar.git 2>/dev/null || true\necho "Ready to push! Run: git push -u origin main"`
       );
 
       folder?.file(
@@ -165,8 +165,8 @@ export const ExecutiveDocumentationModal: React.FC<ExecutiveDocumentationModalPr
             schema_version: '2.4.0',
             exported_at: new Date().toISOString(),
             system: 'OSIRIS Wildfire Air Operations Intelligence',
-            agency: 'Interagency CAL FIRE & USFS Tactical Command',
-            totalBasesMonitored: 14,
+            agency: 'Synthetic interagency scenario — no agency affiliation',
+            totalBasesModeled: 14,
             summaryTelemetry: {
               totalLoadingPits: 46,
               occupiedLoadingPits: 28,
@@ -224,66 +224,65 @@ export const ExecutiveDocumentationModal: React.FC<ExecutiveDocumentationModalPr
     {
       number: 1,
       title: 'OSIRIS: Next-Gen Wildfire Air Operations & Compute Scheduling',
-      subtitle: 'Uniting 60 FPS Hardware-Accelerated Tactical Radar with Real-Time DAG Compute Orchestration',
+      subtitle: 'A Canvas tactical visualization paired with interactive DAG orchestration',
       badge: 'Executive Briefing',
       bullets: [
         'Bridging the high-consequence gap between tactical airspace awareness and mission-critical data engineering.',
-        'Engineered for CAL FIRE air attack supervisors, DoD MAFFS wings, and wildfire operations researchers.',
+        'Designed as a portfolio prototype for exploring wildfire aviation workflows with synthetic data.',
         'Zero-dependency runtime UI: React 19, TypeScript, HTML5 Canvas 2D, and Recharts.',
       ],
-      diagram: `[ Tactical 60 FPS Radar ] <==== Sub-Second Real-Time Bus ====> [ DAG Compute Orchestrator ]
+      diagram: `[ Tactical Canvas View ] <==== Local WebSocket Bus ====> [ DAG Compute Orchestrator ]
             ↓                                                               ↓
-2,200+ Assets & Victor Airways                               NASA FIRMS & Base SLA Scheduling`,
+Generated assets & airspace layers                         Generated incident & base scenarios`,
       speakerNote:
-        'Welcome. OSIRIS solves the high-consequence situational awareness and data latency bottlenecks in California aerial wildfire response by pairing a high-frequency canvas map with an automated DAG ETL pipeline.',
+        'OSIRIS demonstrates how a Canvas map and a dependency-aware pipeline interface can share one operational-style workspace. All records are synthetic.',
     },
     {
       number: 2,
       title: 'The Operational Problem: High-Stakes Airspace & Latency',
-      subtitle: 'Fragmented data streams cost vital minutes during explosive wildfire crown runs',
+      subtitle: 'A design exploration of fragmented geospatial and pipeline information',
       badge: 'Challenge Space',
       bullets: [
         'High-Consequence Airspace: Coordinating heavy airtankers (C-130H MAFFS, DC-10 VLAT), helitack, and lead planes inside restricted 5NM TFR corridors.',
-        'Data Latency: Ground crews rely on fragmented data streams—satellite heat sensors, transponder ADS-B, and base turnaround logs—often arriving with minutes of lag.',
-        'Operational Friction: Slower tanker commitment, base loading pit bottlenecks, and increased risk of mid-air airspace conflicts.',
+        'Data Fragmentation: Thermal, position, weather, and base records can require different displays and processing stages.',
+        'Prototype Goal: Explore a unified interaction model without representing a deployable command system.',
       ],
-      diagram: `[ Satellite Heat Ingest ] ──(Lag)──> [ Disparate Spreadsheets ] ──(Lag)──> [ Air Attack Dispatch ]
-                      Result: +25 min turnaround delay & blind drop runs`,
+      diagram: `[ Generated incident data ] ──> [ Validation ] ──> [ Shared simulation view ]`,
       speakerNote:
-        'In peak wildfire season, seconds matter. A 10-minute delay in launching retardant drops can mean the difference between a contained ridge fire and an out-of-control urban conflagration.',
+        'The prototype focuses on information architecture and dependency visibility, not operational recommendations.',
     },
     {
       number: 3,
       title: 'The OSIRIS Solution: Unified Operational Cockpit',
-      subtitle: 'Real-time spatial visualization married to automated topological pipeline scheduling',
+      subtitle: 'Interactive spatial visualization paired with topological pipeline scheduling',
       badge: 'Architecture',
       bullets: [
-        'Left Wing - Tactical Radar: Hardware-accelerated HTML5 Canvas 2D engine running at 60 FPS across California.',
+        'Left Wing - Tactical View: HTML5 Canvas 2D rendering with zoom, pan, layers, and hover inspection.',
         'Right Wing - DAG Pipeline Orchestrator: Automated topological dependency engine scheduling data ingestion, plume modeling, and SLA dispatch.',
-        'The Bridge: Sub-second WebSocket event bus ensuring ground controllers and air attack supervisors share the exact same operational truth.',
+        'The Bridge: A local WebSocket event bus synchronizes demonstration state across browser sessions.',
       ],
       diagram: `+────────────────────────────+─────────────────────────────+
 |   TACTICAL RADAR CANVAS    |   DAG COMPUTE ORCHESTRATOR  |
-| • 60 FPS Canvas 2D Engine  | • Topological Dependency    |
+| • Canvas 2D Renderer       | • Topological Dependency    |
 | • 10-Class Icon Silhouettes| • Parallel Branch Execution |
-| • Live Reticle & Hover HUD | • Recharts Telemetry Chart  |
+| • Hover Reticle & HUD      | • Generated Telemetry Chart |
 +────────────────────────────+─────────────────────────────+`,
       speakerNote:
-        'OSIRIS does not separate analytics from operations. The same screen that shows an airtanker live GPS track also monitors the ETL pipeline processing its thermal drop footprint.',
+        'The same interface connects synthetic map objects to the demonstration pipeline that models their processing stages.',
     },
     {
       number: 4,
-      title: 'Tactical Radar Engineering: 60 FPS Under Pressure',
+      title: 'Tactical Visualization Engineering',
       subtitle: 'Eliminating DOM overhead through direct 2D context rasterization & geodetics',
       badge: 'Canvas 2D Engine',
       bullets: [
         'High-DPI Canvas Rendering: Direct 2D context rasterization eliminates DOM node bloat completely.',
-        '2,200+ Fleet Surge Stress Mode: Renders thousands of simultaneous dynamic markers with frame durations under 1.2ms.',
+        'High-density scenario mode: Exercises batched drawing across many generated markers.',
         'Tactical Airspace Layers: Federal Victor Airways (V23, V25, V107), Class B terminal airspace, active retardant spray swaths, and Diablo/Santa Ana wind barbs.',
       ],
-      diagram: `GPS WGS84 Coordinates ──> Geodetic Projection Engine ──> ViewBox Matrix ──> HiDPI Canvas Raster (<1.2ms)`,
+      diagram: `Scenario Coordinates ──> Projection Function ──> ViewBox Matrix ──> HiDPI Canvas Raster`,
       speakerNote:
-        'By bypassing DOM nodes and rendering directly onto a single hardware-accelerated canvas, we achieve consistent 60 FPS performance even during statewide surge simulations.',
+        'Drawing onto a single Canvas reduces DOM churn. Reproducible frame-rate claims are deferred until a benchmark harness is published.',
     },
     {
       number: 5,
@@ -305,32 +304,32 @@ export const ExecutiveDocumentationModal: React.FC<ExecutiveDocumentationModalPr
     {
       number: 6,
       title: 'DAG Pipeline Orchestrator: Dependency Scheduling',
-      subtitle: 'Parallel compute branches, real-time Recharts resource telemetry & JSON export',
+      subtitle: 'Parallel branches, generated resource telemetry, and JSON export',
       badge: 'Data Engineering',
       bullets: [
         'Topological Execution Engine: Enforces upstream stage dependencies before dispatching downstream compute.',
-        'Parallel Branching: Concurrently processes atmospheric plume spread and fuel moisture models, reducing total pipeline duration by 57%.',
-        'Recharts Resource Sidebar: Real-time CPU and RAM utilization curves to detect compute spikes and stage throttling.',
+        'Parallel Branching: Demonstrates concurrent atmospheric and fuel-moisture stages after validation.',
+        'Recharts Resource Sidebar: Displays generated CPU and RAM curves for the active scenario.',
         '1-Click JSON Configuration Export: Serializes DAG topology and stage parameters into a downloadable JSON file.',
       ],
       diagram: `[ Ingest ] ──> [ Validate ] ──┬──> [ Plume Spread ]  ──┬──> [ Spatial Index ] ──> [ SLA Dispatch ]
-                             └──> [ Fuel Moisture ] ──┘   (Parallel Branching: -57% Latency)`,
+                             └──> [ Fuel Moisture ] ──┘`,
       speakerNote:
         'The DAG orchestrator is completely configurable. Users can adjust SLAs, inspect stage retries, and export the entire configuration into a downloadable JSON file with a single click.',
     },
     {
       number: 7,
-      title: 'Predictive Turnaround & SLA Logistics',
-      subtitle: 'Enforcing the 20-minute turnaround SLA across California tanker reloading bases',
+      title: 'Scenario Turnaround & Logistics',
+      subtitle: 'Exploring configurable turnaround thresholds in generated base records',
       badge: 'Logistics Optimization',
       bullets: [
-        'Base Turnaround Tracking: Real-time countdowns for McClellan, Chico, Paso Robles, Ramona, and Fresno bases.',
+        'Base Turnaround Tracking: Scenario countdowns for modeled California base locations.',
         'Phos-Chek Retardant Stock: Monitors bulk concentrate reserves and on-deck mix capacity.',
         'Predictive Maintenance Dossiers: Automated flight hour counters alerting crews to mandatory hydraulic inspections.',
       ],
-      diagram: `Landing (T-0) ──> Loading Pit (T+4m) ──> Phos-Chek Pumping (T+11m) ──> Takeoff (T+16m) [SLA Achieved: 16.2 min]`,
+      diagram: `Landing ──> Loading Pit ──> Suppressant Loading ──> Takeoff [configurable scenario threshold]`,
       speakerNote:
-        'Tankers only suppress fires when they are in the air. OSIRIS predictive logistics module keeps turnaround times under 16 minutes on average.',
+        'Turnaround values are editable demonstration parameters, not agency records or universal operating limits.',
     },
     {
       number: 8,
@@ -340,33 +339,32 @@ export const ExecutiveDocumentationModal: React.FC<ExecutiveDocumentationModalPr
       bullets: [
         'Bug 1: ReferenceError: Split is not defined. Resolved Lucide icon collision and strict TS2322 title props.',
         'Bug 2: AST Toolbar Hierarchy Imbalance. Restructured multi-layered flexbox containers to restore compiler symmetry.',
-        'Bug 3: 60 FPS Canvas Stale Closures. Implemented mutable useRef bridges to pass instantaneous state without restarting animation loops.',
-        'Bug 4: High-Density Context Thrashing. Batch-rendered homogenous geometries to surge from 28 FPS to a solid 60 FPS.',
+        'Bug 3: Canvas Stale Closures. Implemented mutable useRef bridges to pass current state without restarting animation loops.',
+        'Bug 4: High-Density Context Thrashing. Batch-rendered homogeneous geometries to reduce repeated context operations.',
       ],
-      diagram: `Stale State Closure ──> Replaced with mutable useRef bridge ──> Zero-Latency 60 FPS Hover Reticles`,
+      diagram: `Stale State Closure ──> Mutable useRef bridge ──> Current hover state inside animation loop`,
       speakerNote:
-        'True production readiness isn not just writing features—it is diagnosing root causes and building resilient architectural patterns that withstand edge cases.',
+        'The case study emphasizes concrete root causes, code-level fixes, and reproducible verification.',
     },
     {
       number: 9,
-      title: 'Quantitative Performance Benchmarks',
-      subtitle: 'Empirical data validating low-latency web architecture under extreme load',
-      badge: 'Empirical Benchmarks',
+      title: 'Verification & Measurement Discipline',
+      subtitle: 'Separating automated checks from performance claims',
+      badge: 'Verification',
       bullets: [
-        'Frame Render Duration: Decreased from 16.8ms to <1.2ms (-92.8% latency).',
-        'Hover Hit-Testing: Spatial radius checks execute in <0.4ms.',
-        'Surge Marker Scale: 60 FPS maintained with 2,200+ active markers (+114% improvement).',
-        'DAG Execution Throughput: 12 pipeline stages completed in <18ms.',
-        'Test Reliability: 22/22 automated Vitest tests passing with 0 warnings.',
+        'Unit and integration checks run with Vitest.',
+        'TypeScript is checked with tsc --noEmit.',
+        'The production bundle is built with Vite.',
+        'Performance numbers are not published until a reproducible browser benchmark is committed.',
+        'Current verification results belong in release notes generated from the actual run.',
       ],
-      diagram: `Frame Render Duration:   [ 16.8ms Pre-Opt ] ════════════> [ <1.2ms Post-Opt ] (-92.8%)
-Surge Frame Rate:        [ 28 FPS Pre-Opt ] ════════════> [ 60 FPS Post-Opt ] (+114%)`,
+      diagram: `[ Vitest ] + [ TypeScript ] + [ Vite Build ] ──> Reproducible release evidence`,
       speakerNote:
-        'These benchmarks prove that web technologies, when architected with discipline, can match native C++ applications in graphical and algorithmic performance.',
+        'This release reports only checks reproduced from the repository; performance benchmarking remains future work.',
     },
     {
       number: 10,
-      title: 'Production Tech Stack',
+      title: 'Technical Stack',
       subtitle: 'Modern, type-safe, and zero-overhead engineering ecosystem',
       badge: 'Technology Stack',
       bullets: [
@@ -375,15 +373,15 @@ Surge Frame Rate:        [ 28 FPS Pre-Opt ] ════════════
         'Backend & Networking: Node.js, Express, WebSocket protocol, TSX.',
         'Testing & Quality: Vitest test runner, Chaos latency injection harness, strict TypeScript compilation.',
       ],
-      diagram: `React 19 + TypeScript 5.x  ──>  HTML5 Canvas 2D (60 FPS)  ──>  WebSockets  ──>  Vitest Test Suite`,
+      diagram: `React 19 + TypeScript 5.x  ──>  HTML5 Canvas 2D  ──>  WebSockets  ──>  Vitest`,
       speakerNote:
-        'We chose a modern, type-safe stack that enables instant local development while providing zero-runtime-error guarantees in production.',
+        'The stack favors typed interfaces, local reproducibility, and inspectable simulation state.',
     },
     {
       number: 11,
       title: 'Deployment & Portfolio Availability',
-      subtitle: 'Open-source code, live Cloud Run deployment, and comprehensive documentation',
-      badge: 'Open Source',
+      subtitle: 'Public source code and comprehensive documentation',
+      badge: 'Public Source',
       bullets: [
         'GitHub Repository: https://github.com/Frogman2745/osiris-tactical-radar',
         'Author Portfolio: Froghaus Studios (https://froghausstudios.com)',
@@ -392,7 +390,7 @@ Surge Frame Rate:        [ 28 FPS Pre-Opt ] ════════════
       ],
       diagram: `git clone https://github.com/Frogman2745/osiris-tactical-radar.git ──> npm install ──> npm test ──> npm run dev`,
       speakerNote:
-        'The codebase is structured for immediate deployment, open-source collaboration, and seamless inclusion in engineering portfolios.',
+        'The codebase is structured for deployment review, collaboration, and inclusion in engineering portfolios. No reuse license has been granted yet.',
     },
     {
       number: 12,
@@ -400,7 +398,7 @@ Surge Frame Rate:        [ 28 FPS Pre-Opt ] ════════════
       subtitle: 'Future horizons: 3D terrain elevation and real-time hardware ADS-B ingestion',
       badge: 'Roadmap & Q&A',
       bullets: [
-        'Phase 1 Delivered: 60 FPS Tactical Radar, 10-Class Icon Symbology, DAG Pipeline Orchestrator, Recharts Compute Sidebar, JSON Export.',
+        'Phase 1 Delivered: Canvas tactical view, 10-class icon symbology, DAG orchestrator, Recharts sidebar, and JSON export.',
         'Phase 2 Next: 3D WebGL terrain elevation extrusion and direct satellite ADS-B hardware receiver ingestion.',
         'Phase 3 Future: Multi-agent AI dispatch assistant using Google OR-Tools constraint satisfaction algorithms.',
       ],
@@ -533,7 +531,7 @@ Surge Frame Rate:        [ 28 FPS Pre-Opt ] ════════════
                   <ul className="list-disc pl-5 space-y-1 text-slate-300">
                     <li><strong>Visual Silhouette Differentiation:</strong> Every asset has a dedicated vector shape: 4-engine turboprop with straight high wings (C-130H MAFFS), swept-wing jet (VLAT DC-10), spinning rotor blades (Helitack), tactical diamond (Lead plane), pulsing red thermal corona (Wildfire), and runway strips (Bases).</li>
                     <li><strong>In-Canvas Reticle:</strong> Hovering any icon illuminates a glowing cyan reticle bracket <code>[ ⌖ ]</code> and in-canvas badge in real time.</li>
-                    <li><strong>Floating HUD Tooltip:</strong> Moving cursor over any icon immediately brings up a rich tooltip detailing icon visual shape, complete operational role description, and live telemetry specs (altitude, ground speed, heading, capacity, frequencies, wind gusts).</li>
+                    <li><strong>Floating HUD Tooltip:</strong> Moving over an icon shows its generated scenario fields, including altitude, speed, heading, capacity, frequency, and wind.</li>
                     <li><strong>Click-to-Lock:</strong> Clicking an aircraft icon locks telemetry and opens the comprehensive Aircraft Dossier panel.</li>
                   </ul>
                 </div>
@@ -541,11 +539,11 @@ Surge Frame Rate:        [ 28 FPS Pre-Opt ] ════════════
                 <div className="p-4 rounded-lg bg-slate-950/50 border border-slate-800/80">
                   <h4 className="font-bold text-white text-sm mb-2 flex items-center gap-2">
                     <Zap className="w-4 h-4 text-emerald-400" />
-                    <span>3. DAG Pipeline Orchestrator &amp; Real-Time Compute Sidebar</span>
+                    <span>3. DAG Pipeline Orchestrator &amp; Scenario Compute Sidebar</span>
                   </h4>
                   <ul className="list-disc pl-5 space-y-1 text-slate-300">
                     <li><strong>Topological DAG Graph:</strong> Visualizes data processing stages in strict dependency order (FIRMS Ingest → Schema Validation → Parallel Plume/Fuel Models → Spatial Indexing → Base SLA Dispatch).</li>
-                    <li><strong>Compute Resource Telemetry:</strong> Sidebar displays real-time Recharts CPU/RAM area chart during execution to monitor server load and detect throttled stages.</li>
+                    <li><strong>Compute Resource Telemetry:</strong> Sidebar displays generated CPU/RAM curves during a simulated execution.</li>
                     <li><strong>Export Pipeline Configuration:</strong> Action button in top toolbar serializes active DAG structure, node settings, and variables into a downloadable JSON file.</li>
                   </ul>
                 </div>
@@ -563,7 +561,7 @@ Surge Frame Rate:        [ 28 FPS Pre-Opt ] ════════════
                     <span>OSIRIS Engineering Case Study: Diagnostic Root Causes &amp; Bug Fixes</span>
                   </h3>
                   <p className="text-xs text-slate-400 mt-1">
-                    Exhaustive architectural breakdown of production errors, root cause investigations, and performance remediations.
+                    Architectural breakdown of implementation errors, root-cause investigations, and code-level remediations.
                   </p>
                 </div>
                 <button
@@ -618,7 +616,7 @@ Surge Frame Rate:        [ 28 FPS Pre-Opt ] ════════════
                 <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-2">
                   <div className="flex items-center gap-2 font-mono text-xs font-bold text-amber-400">
                     <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-                    <span>ERROR 3: 60 FPS Canvas Render Loop Stale State Closures</span>
+                    <span>ERROR 3: Canvas Render Loop Stale State Closures</span>
                   </div>
                   <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950 text-emerald-300 border border-emerald-800">
                     RESOLVED
@@ -632,41 +630,41 @@ Surge Frame Rate:        [ 28 FPS Pre-Opt ] ════════════
                 </div>
               </div>
 
-              {/* Benchmark Table */}
+              {/* Verification Table */}
               <div className="overflow-x-auto pt-2">
                 <table className="w-full text-xs font-mono text-left border border-slate-800">
                   <thead className="bg-slate-950 text-slate-400 uppercase text-[10px] border-b border-slate-800">
                     <tr>
-                      <th className="p-2.5">Performance Metric</th>
-                      <th className="p-2.5">Pre-Optimization</th>
-                      <th className="p-2.5">Post-Optimization</th>
-                      <th className="p-2.5">Net Gain</th>
+                      <th className="p-2.5">Verification Area</th>
+                      <th className="p-2.5">Method</th>
+                      <th className="p-2.5">Release Rule</th>
+                      <th className="p-2.5">Status</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-800/70 text-slate-300">
                     <tr>
-                      <td className="p-2.5 font-bold text-white">Surge Mode Frame Rate (2.2k+ Targets)</td>
-                      <td className="p-2.5 text-red-400">28 FPS</td>
-                      <td className="p-2.5 text-emerald-400 font-bold">60 FPS Solid</td>
-                      <td className="p-2.5 text-cyan-400">+114%</td>
+                      <td className="p-2.5 font-bold text-white">Automated tests</td>
+                      <td className="p-2.5 text-slate-300">Vitest</td>
+                      <td className="p-2.5 text-slate-300">Report actual run output</td>
+                      <td className="p-2.5 text-cyan-400">Reproducible</td>
                     </tr>
                     <tr>
-                      <td className="p-2.5 font-bold text-white">Canvas Frame Render Duration</td>
-                      <td className="p-2.5 text-red-400">16.8ms</td>
-                      <td className="p-2.5 text-emerald-400 font-bold">&lt;1.2ms</td>
-                      <td className="p-2.5 text-cyan-400">-92.8% latency</td>
+                      <td className="p-2.5 font-bold text-white">Type safety</td>
+                      <td className="p-2.5 text-slate-300">tsc --noEmit</td>
+                      <td className="p-2.5 text-slate-300">Zero compiler errors</td>
+                      <td className="p-2.5 text-cyan-400">Reproducible</td>
                     </tr>
                     <tr>
-                      <td className="p-2.5 font-bold text-white">Hover Hit-Testing Latency</td>
-                      <td className="p-2.5 text-red-400">4.8ms</td>
-                      <td className="p-2.5 text-emerald-400 font-bold">&lt;0.4ms</td>
-                      <td className="p-2.5 text-cyan-400">-91.6% latency</td>
+                      <td className="p-2.5 font-bold text-white">Production bundle</td>
+                      <td className="p-2.5 text-slate-300">Vite build</td>
+                      <td className="p-2.5 text-slate-300">Successful bundle</td>
+                      <td className="p-2.5 text-cyan-400">Reproducible</td>
                     </tr>
                     <tr>
-                      <td className="p-2.5 font-bold text-white">Automated Vitest Test Suite</td>
-                      <td className="p-2.5 text-slate-400">16 Tests</td>
-                      <td className="p-2.5 text-emerald-400 font-bold">22 Tests Passed (0 Failed)</td>
-                      <td className="p-2.5 text-cyan-400">100% Pass Rate</td>
+                      <td className="p-2.5 font-bold text-white">Browser performance</td>
+                      <td className="p-2.5 text-slate-300">Future benchmark harness</td>
+                      <td className="p-2.5 text-slate-300">Publish captured methodology</td>
+                      <td className="p-2.5 text-amber-400">Not claimed</td>
                     </tr>
                   </tbody>
                 </table>
@@ -706,12 +704,12 @@ Surge Frame Rate:        [ 28 FPS Pre-Opt ] ════════════
         v                                                                   v
 +-------------------------------+                         +---------------------------------+
 |   Tactical Radar Subsystem    |                         |  DAG Compute Orchestration Sub  |
-|  (60 FPS HTML5 Canvas 2D)     |                         |    (SVG Topology + Recharts)    |
+|    (HTML5 Canvas 2D)          |                         |    (SVG Topology + Recharts)    |
 +-------------------------------+                         +---------------------------------+
 | • Geo-Projection Engine       |                         | • Topological Node Sorter       |
 | • 10-Class Icon Symbology     |                         | • Parallel Branch Execution     |
-| • Laser Radar Sweep (Phosphor)|                         | • Real-Time CPU/RAM Telemetry   |
-| • 2,200+ Surge Marker Stress  |                         | • SLA Turnaround Enforcement    |
+| • Laser Radar Sweep (Phosphor)|                         | • Generated CPU/RAM Telemetry   |
+| • High-Density Scenario Mode  |                         | • Scenario Threshold Tracking   |
 | • Dynamic Hover Reticle & HUD |                         | • Config Export / Import JSON   |
 +-------------------------------+                         +---------------------------------+
         |                                                                   |
@@ -719,8 +717,8 @@ Surge Frame Rate:        [ 28 FPS Pre-Opt ] ════════════
                                           |
                                           v
 +-----------------------------------------------------------------------------------+
-|                Telemetry Dispatch, WebSockets & In-Memory Data Store              |
-|          (Aircraft Dossiers, Base Turnaround SLAs, FIRMS Satellite Feeds)         |
+|               Scenario State, WebSockets & In-Memory Data Store                   |
+|         (Generated aircraft, bases, incidents, weather, and pipeline data)        |
 +-----------------------------------------------------------------------------------+`}</pre>
               </div>
 
@@ -811,7 +809,7 @@ Surge Frame Rate:        [ 28 FPS Pre-Opt ] ════════════
 
                 <div className="flex items-center justify-between pt-4 border-t border-slate-800/80 mt-6 text-[10px] font-mono text-slate-500">
                   <span>Presenter: Nicholas Marnocha (Froghaus Studios)</span>
-                  <span>Confidential &amp; Interagency Aerial Firefighting Review</span>
+                  <span>Portfolio Simulation · Synthetic Data</span>
                 </div>
               </div>
 
@@ -855,7 +853,7 @@ Surge Frame Rate:        [ 28 FPS Pre-Opt ] ════════════
                   <button
                     onClick={() =>
                       copyToClipboard(
-                        `🚀 Excited to share my latest engineering build: OSIRIS — Wildfire Tactical Air Operations Radar & DAG Compute Orchestrator.\n\nWhen managing high-consequence aerial firefighting (coordinating CAL FIRE air attack and DoD Air National Guard C-130 MAFFS wings), operators face a critical friction point: situational airspace awareness and backend data compute are almost always siloed in separate systems.\n\nI built OSIRIS to unite these two mission-critical domains into a single, high-performance operational cockpit.\n\nKey Highlights:\n🎯 1. 60 FPS Hardware-Accelerated Tactical Radar (2,200+ surge markers, <1.2ms frame latency, 10 custom aircraft silhouettes)\n⚙️ 2. Directed Acyclic Graph (DAG) Pipeline Orchestrator (topological dependency scheduling, parallel branches cutting latency by 57%, Recharts compute telemetry)\n🛡️ 3. Resilient Production Engineering (22 Vitest tests passing, 0 warnings)\n\nLive Demo & Code:\n💻 GitHub: https://github.com/Frogman2745/osiris-tactical-radar\n🌐 Portfolio: https://froghausstudios.com\n\n#SoftwareEngineering #TypeScript #React #Aviation #WildfireSuppression #HTML5Canvas #DataPipelines #OpenSource`,
+                        `I built OSIRIS, a public-source wildfire aviation simulation and DAG orchestration prototype.\n\nThe project combines a Canvas-based tactical view, 10 custom icon classes, hover inspection, dependency-aware pipeline execution, generated compute telemetry, JSON export, and local WebSocket synchronization.\n\nEvery aircraft, incident, weather, base, and pipeline record is synthetic. OSIRIS is a portfolio project, not an agency system or operational dispatch tool.\n\nCode: https://github.com/Frogman2745/osiris-tactical-radar\nPortfolio: https://froghausstudios.com\n\n#React #TypeScript #HTML5Canvas #DataEngineering #SoftwareEngineering`,
                         'LinkedIn Post'
                       )
                     }
@@ -866,18 +864,14 @@ Surge Frame Rate:        [ 28 FPS Pre-Opt ] ════════════
                   </button>
                 </div>
                 <div className="p-3 rounded bg-black/80 font-mono text-[11px] text-slate-300 border border-slate-800 max-h-48 overflow-y-auto whitespace-pre-wrap leading-relaxed">
-{`🚀 Excited to share my latest engineering build: OSIRIS — Wildfire Tactical Air Operations Radar & DAG Compute Orchestrator.
+{`I built OSIRIS, a public-source wildfire aviation simulation and DAG orchestration prototype.
 
-When managing high-consequence aerial firefighting (coordinating CAL FIRE air attack and DoD Air National Guard C-130 MAFFS wings), operators face a critical friction point: situational airspace awareness and backend data compute are almost always siloed in separate systems.
+It combines a Canvas tactical view, 10 custom icon classes, hover inspection, dependency-aware pipeline execution, generated compute telemetry, JSON export, and local WebSocket synchronization.
 
-I built OSIRIS to unite these two mission-critical domains into a single, high-performance operational cockpit.
+All aircraft, incident, weather, base, and pipeline records are synthetic. OSIRIS is a portfolio project, not an agency system or operational dispatch tool.
 
-🎯 1. 60 FPS Hardware-Accelerated Tactical Radar (2,200+ surge markers, <1.2ms frame latency, 10 custom aircraft silhouettes)
-⚙️ 2. Directed Acyclic Graph (DAG) Pipeline Orchestrator (topological dependency scheduling, parallel branches cutting latency by 57%, Recharts compute telemetry)
-🛡️ 3. Resilient Production Engineering (22 Vitest tests passing, 0 warnings)
-
-💻 GitHub: https://github.com/Frogman2745/osiris-tactical-radar
-🌐 Portfolio: https://froghausstudios.com`}
+Code: https://github.com/Frogman2745/osiris-tactical-radar
+Portfolio: https://froghausstudios.com`}
                 </div>
               </div>
 
@@ -891,7 +885,7 @@ I built OSIRIS to unite these two mission-critical domains into a single, high-p
                   <button
                     onClick={() =>
                       copyToClipboard(
-                        `git init -b main\ngit add .\ngit commit -m "feat(osiris): production-ready release"\ngit remote add origin https://github.com/Frogman2745/osiris-tactical-radar.git\ngit push -u origin main`,
+                        `git init -b main\ngit add .\ngit commit -m "feat(osiris): publish simulation and documentation"\ngit remote add origin https://github.com/Frogman2745/osiris-tactical-radar.git\ngit push -u origin main`,
                         'Git Commands'
                       )
                     }
@@ -902,7 +896,7 @@ I built OSIRIS to unite these two mission-critical domains into a single, high-p
                   </button>
                 </div>
                 <div className="p-3 rounded bg-black/80 font-mono text-[11px] text-emerald-300 border border-slate-800">
-                  <code>{`git init -b main\ngit add .\ngit commit -m "feat(osiris): production release of tactical radar & orchestrator"\ngit remote add origin https://github.com/Frogman2745/osiris-tactical-radar.git\ngit push -u origin main`}</code>
+                  <code>{`git init -b main\ngit add .\ngit commit -m "feat(osiris): publish simulation and documentation"\ngit remote add origin https://github.com/Frogman2745/osiris-tactical-radar.git\ngit push -u origin main`}</code>
                 </div>
               </div>
 
@@ -916,7 +910,7 @@ I built OSIRIS to unite these two mission-critical domains into a single, high-p
                   <button
                     onClick={() =>
                       copyToClipboard(
-                        `<div class="project-card border border-slate-800 bg-slate-950 rounded-xl p-6 font-sans">\n  <div class="flex items-center justify-between mb-2">\n    <h3 class="text-xl font-bold text-white">OSIRIS: Wildfire Air Operations & DAG Orchestrator</h3>\n    <span class="px-2 py-0.5 text-xs font-mono bg-cyan-950 text-cyan-300 rounded">Production Ready</span>\n  </div>\n  <p class="text-slate-300 text-sm mb-4">60 FPS Hardware-Accelerated Tactical Radar & Topological DAG Compute Scheduling for interagency aerial firefighting.</p>\n  <a href="https://github.com/Frogman2745/osiris-tactical-radar" class="text-cyan-400 font-bold text-xs">View on GitHub &rarr;</a>\n</div>`,
+                        `<div class="project-card border border-slate-800 bg-slate-950 rounded-xl p-6 font-sans">\n  <div class="flex items-center justify-between mb-2">\n    <h3 class="text-xl font-bold text-white">OSIRIS: Wildfire Aviation Simulation & DAG Orchestrator</h3>\n    <span class="px-2 py-0.5 text-xs font-mono bg-cyan-950 text-cyan-300 rounded">Public Source</span>\n  </div>\n  <p class="text-slate-300 text-sm mb-4">Canvas tactical visualization and dependency-aware pipeline orchestration using clearly labeled synthetic data.</p>\n  <a href="https://github.com/Frogman2745/osiris-tactical-radar" class="text-cyan-400 font-bold text-xs">View on GitHub &rarr;</a>\n</div>`,
                         'Portfolio HTML'
                       )
                     }

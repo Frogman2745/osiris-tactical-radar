@@ -248,7 +248,7 @@ Maintenance            1        29.400000          1
                   {selectedBiTool === 'postgres' && 'PostgreSQL Production DDL & Indexes'}
                 </h3>
                 <p className="text-xs text-slate-400 mt-0.5 font-mono">
-                  Production-ready models generated directly from the AxiomBI telemetry mart
+                  Demonstration models generated from the local synthetic telemetry dataset
                 </p>
               </div>
 

@@ -21,7 +21,7 @@ git add .
 
 # Commit
 echo "💾 Creating production release commit..."
-git commit -m "feat(osiris): production-ready release of tactical radar, DAG orchestrator, 22 vitest tests & executive documentation" || echo "No new changes to commit."
+git commit -m "feat(osiris): publish tactical radar simulation, DAG orchestrator, and documentation" || echo "No new changes to commit."
 
 # Check for remote
 if git remote | grep -q "origin"; then

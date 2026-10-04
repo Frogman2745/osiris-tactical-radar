@@ -1244,10 +1244,10 @@ export const TacticalRadar: React.FC<TacticalRadarProps> = ({
                   ? 'bg-amber-950/80 border-amber-500 text-amber-300 ring-1 ring-amber-500/50'
                   : 'bg-slate-900 border-slate-800 text-slate-500 hover:text-slate-300'
               }`}
-              title="Toggle High-Density Canvas Engine: Simulates thousands of active wildfire hotspots & air assets at 60 FPS"
+              title="Toggle high-density Canvas scenario with generated wildfire and aircraft objects"
             >
               <Activity className="w-3 h-3 text-amber-400 animate-pulse" />
-              <span>DENSITY: {highDensityMode ? '2,200+ SURGE (60FPS)' : 'STANDARD'}</span>
+              <span>DENSITY: {highDensityMode ? 'HIGH-DENSITY SCENARIO' : 'STANDARD'}</span>
             </button>
 
             <button
@@ -1359,7 +1359,7 @@ export const TacticalRadar: React.FC<TacticalRadarProps> = ({
                     Tactical Icon Symbology &amp; Recognition Key
                   </span>
                   <span className="text-[10px] text-slate-400 font-sans hidden md:inline">
-                    Hover any icon card to illuminate matching assets across California; hover canvas icons to inspect live telemetry
+                    Hover any icon card to illuminate matching scenario objects; hover Canvas icons to inspect generated telemetry
                   </span>
                 </div>
                 <div className="text-[10px] text-cyan-400 font-sans flex items-center gap-2">
@@ -1649,7 +1649,7 @@ export const TacticalRadar: React.FC<TacticalRadarProps> = ({
             </div>
 
             <div className="absolute bottom-3 right-4 z-30 pointer-events-none font-mono text-[9px] text-right text-slate-400 leading-tight bg-black/60 px-2 py-1 rounded border border-slate-800">
-              <div>ENGINE: <strong className="text-cyan-400 font-bold">HTML5 CANVAS 2D (60 FPS)</strong></div>
+              <div>ENGINE: <strong className="text-cyan-400 font-bold">HTML5 CANVAS 2D</strong></div>
               <div>TARGETS: <strong className="text-white font-bold">{highDensityMode ? `${(filteredAssets.length + 2200).toLocaleString()} (SURGE)` : filteredAssets.length}</strong></div>
             </div>
 
@@ -1829,7 +1829,7 @@ export const TacticalRadar: React.FC<TacticalRadarProps> = ({
               </div>
             ) : (
               <div className="text-slate-500 text-center py-12">
-                Select any base, tanker, or wildfire to inspect live telemetry.
+                Select any base, tanker, or wildfire to inspect generated scenario telemetry.
               </div>
             )}
 

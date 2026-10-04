@@ -191,7 +191,7 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={onOpenLatencyMonitor}
             className="hidden xl:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/50 text-xs text-slate-300 font-mono transition-all cursor-pointer shadow-sm group"
-            title="Simulated API Latency Monitor · P95: 18.2ms · 99.98% SLA"
+            title="Simulated API latency monitor · generated scenario values"
           >
             <Activity className="w-3.5 h-3.5 text-cyan-400 group-hover:animate-pulse" />
             <span className="text-cyan-300 font-bold">18ms</span>

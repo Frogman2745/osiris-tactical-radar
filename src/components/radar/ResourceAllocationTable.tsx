@@ -82,7 +82,7 @@ export const ResourceAllocationTable: React.FC<ResourceAllocationTableProps> = (
             </h3>
           </div>
           <p className="text-slate-400 text-xs mt-1 leading-relaxed max-w-3xl">
-            Live telemetry monitoring Phos-Chek MVP-Fx mixed retardant capacity, high-flow pumping rates, loading pit occupancy, and SLA turnaround compliance across 30 California defense airfields and tanker bases.
+            Synthetic scenario data modeling suppressant capacity, pumping rates, loading-pit occupancy, and configurable turnaround thresholds across representative California locations.
           </p>
         </div>
 

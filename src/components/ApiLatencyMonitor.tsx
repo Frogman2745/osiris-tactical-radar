@@ -413,7 +413,7 @@ export const ApiLatencyMonitor: React.FC<ApiLatencyMonitorProps> = ({ onClose, i
                   <span className="text-base font-bold text-cyan-300">
                     {overviewDrilldown === 'benchmarks' && 'Fleet Latency Benchmarks'}
                     {overviewDrilldown === 'percentiles' && 'Tail Latency (P50/P95/P99) Distribution'}
-                    {overviewDrilldown === 'availability' && '99.98% High Availability Audit'}
+                    {overviewDrilldown === 'availability' && 'Synthetic Availability Scenario'}
                     {overviewDrilldown === 'thresholds' && 'Alerting Thresholds & Incidents'}
                   </span>
                 </>
@@ -445,7 +445,7 @@ export const ApiLatencyMonitor: React.FC<ApiLatencyMonitorProps> = ({ onClose, i
               )}
 
               <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-950 border border-cyan-500/40 text-cyan-300 uppercase">
-                99.98% SLA TARGET
+                SCENARIO TARGET
               </span>
             </div>
 
@@ -697,7 +697,7 @@ export const ApiLatencyMonitor: React.FC<ApiLatencyMonitorProps> = ({ onClose, i
               <div>
                 <h3 className="text-base font-bold text-white flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                  <span>High Availability Audit & 99.98% SLA Reliability Proof</span>
+                  <span>Synthetic Availability &amp; Reliability Scenario</span>
                 </h3>
                 <p className="text-xs text-slate-400 mt-0.5">
                   Automated telemetry health verification, zero dropped airframe packets, and multi-region failover.
@@ -1325,7 +1325,7 @@ export const ApiLatencyMonitor: React.FC<ApiLatencyMonitorProps> = ({ onClose, i
               <div
                 onClick={() => setOverviewDrilldown('availability')}
                 className="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all cursor-pointer group"
-                title="Click to inspect 99.98% SLA audit and multi-region availability"
+                title="Click to inspect the generated multi-region availability scenario"
               >
                 <div className="flex items-center justify-between text-[10px] font-bold text-slate-400 uppercase tracking-wider">
                   <span>System Availability</span>

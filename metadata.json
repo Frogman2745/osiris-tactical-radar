@@ -1,6 +1,6 @@
 {
-  "name": "AxiomBI — AI Operations & Predictive BI Platform",
-  "description": "Enterprise AI operations platform for automated ETL pipelines, SQL & Python analytical workflows, predictive business intelligence dashboards, real-time collaborative reporting, and job portfolio tracking.",
+  "name": "OSIRIS — Wildfire Operations Simulation",
+  "description": "Interactive wildfire aviation and data-pipeline simulation built with synthetic scenarios. It is a portfolio prototype, not a live CAL FIRE, USFS, DoD, or dispatch system.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

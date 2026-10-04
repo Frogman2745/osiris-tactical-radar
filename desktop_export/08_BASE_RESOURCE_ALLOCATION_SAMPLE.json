@@ -1,8 +1,8 @@
 {
   "exportTimestamp": "2026-10-03T16:55:00.000Z",
   "system": "OSIRIS Wildfire Air Operations Intelligence",
-  "agency": "Interagency CAL FIRE & USFS Tactical Command",
-  "totalBasesMonitored": 14,
+  "agency": "Synthetic interagency scenario — no agency affiliation",
+  "totalBasesModeled": 14,
   "summaryTelemetry": {
     "totalLoadingPits": 46,
     "occupiedLoadingPits": 28,

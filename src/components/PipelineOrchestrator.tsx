@@ -602,7 +602,7 @@ export const PipelineOrchestrator: React.FC<PipelineOrchestratorProps> = ({
               {pipelineStatus.state === 'running' ? 'Active Execution' : 'Nominal & Verified'}
             </span>
           </div>
-          <div className="text-xs text-slate-500 mt-1">99.98% delivery reliability</div>
+          <div className="text-xs text-slate-500 mt-1">Generated delivery-reliability scenario</div>
         </div>
 
         <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-4">
@@ -707,7 +707,7 @@ export const PipelineOrchestrator: React.FC<PipelineOrchestratorProps> = ({
                   <MessageSquare className="w-3 h-3 text-cyan-400" />
                   <span>Open Stage Comment Thread</span>
                 </button>
-                <span className="text-[9px] text-slate-500">Confidence: 94.8%</span>
+                <span className="text-[9px] text-slate-500">Synthetic confidence score</span>
               </div>
             </div>
           )}

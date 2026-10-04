@@ -217,7 +217,7 @@ export const ResourceUtilizationHeatmap: React.FC<ResourceUtilizationHeatmapProp
                 ? 'bg-emerald-950/60 border-emerald-500/50 text-emerald-300'
                 : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200'
             }`}
-            title="Toggle Live Telemetry Jitter"
+            title="Toggle Simulated Telemetry Jitter"
           >
             <RefreshCw className={`w-3 h-3 ${isLiveSimulating ? 'animate-spin' : ''}`} style={{ animationDuration: '4s' }} />
             <span>{isLiveSimulating ? 'Live Jitter' : 'Frozen'}</span>

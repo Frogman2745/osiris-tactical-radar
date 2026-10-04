@@ -93,17 +93,17 @@ export default function App() {
 ---
 
 ## 1. Executive Summary & Fleet Readiness
-Over the last rolling 30-day operating window, dispatch-to-drop turnaround times averaged **16.2 minutes**, surpassing the state-level SLA threshold of 20.0 minutes by **19.0%**. Mixed-fleet coordination across 8 primary air attack and helitack assets yielded a **94.8% mission-readiness rating**, with 0 critical flight cancellations.
+This report is generated from a synthetic 30-day demonstration scenario. Its values illustrate the reporting workflow and are not agency performance records or field-validated benchmarks.
 
 - **Total Retardant & Suppressant Delivered:** 428,500 gallons
 - **Active Missions Coordinated:** 142 tactical sorties
-- **CP-SAT Mathematical Optimization Gain:** +23.4% faster resource commitment compared to closest-resource naive baseline
+- **Allocation Comparison:** Demonstration comparison between a constraint-based assignment and a closest-resource baseline
 - **Predicted Resource Pressure (Next 14 Days):** Elevated in Northern District (Redding / Humboldt sector) due to projected dry lightning patterns.
 
 ---
 
 ## 2. Automated ETL & Data Quality Health
-The AxiomBI continuous ingestion pipeline processed **4.82M operational telemetry rows** across PostgreSQL and flight dispatch APIs with a **99.98% clean delivery rate**.
+The demonstration pipeline models ingestion, validation, quarantine, and delivery stages using generated records.
 - **Anomaly Detection:** Flagged 2 turnaround spikes (>25 mins) at McClellan Base during peak surge hours; resolved via ground crew re-sequencing.
 - **Automated Schema Drift Protection:** Zero unmapped field errors recorded.
 

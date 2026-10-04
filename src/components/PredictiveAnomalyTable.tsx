@@ -446,7 +446,7 @@ export const PredictiveAnomalyTable: React.FC<PredictiveAnomalyTableProps> = ({
                         <button
                           onClick={() => setSelectedSnapshot(anom)}
                           className="flex items-center gap-1 px-2.5 py-1 text-[11px] font-mono text-cyan-300 bg-cyan-950/60 hover:bg-cyan-900/60 border border-cyan-800/80 rounded transition-all cursor-pointer"
-                          title="Open live telemetry sensor snapshot"
+                          title="Open generated telemetry snapshot"
                         >
                           <Activity className="w-3 h-3 text-cyan-400" />
                           <span>Telemetry</span>

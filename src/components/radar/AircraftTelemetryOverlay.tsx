@@ -170,7 +170,7 @@ export const AircraftTelemetryOverlay: React.FC<AircraftTelemetryOverlayProps> =
               onOpenLiveCam?.({
                 title: `${dossier.callsign} // ON-BOARD OPTICAL NOSE SENSOR`,
                 sensor: `${dossier.modelOrType} · Star SAFIRE 380-HD LWIR / 4K Optical`,
-                desc: `Live real-time targeting feed from ${dossier.name} currently operating over ${telemetry.targetIncident}.`,
+                desc: `Generated scenario feed for ${dossier.name} over ${telemetry.targetIncident}.`,
                 assetName: dossier.name,
                 lat: telemetry.coordinates.lat,
                 lng: telemetry.coordinates.lng,
@@ -188,7 +188,7 @@ export const AircraftTelemetryOverlay: React.FC<AircraftTelemetryOverlayProps> =
       {/* Navigation Sub-Tabs */}
       <div className="flex items-center border-b border-slate-900 bg-slate-950 px-4 pt-2 gap-1 overflow-x-auto text-[11px]">
         {[
-          { id: 'telemetry', label: 'Live Telemetry', icon: Gauge },
+          { id: 'telemetry', label: 'Scenario Telemetry', icon: Gauge },
           { id: 'flight_hours', label: 'Flight Hours & Cycles', icon: Clock },
           { id: 'maintenance', label: 'Maintenance Log', icon: Wrench },
           { id: 'avionics', label: 'Avionics & Link', icon: Radio },
@@ -795,7 +795,7 @@ export const AircraftTelemetryOverlay: React.FC<AircraftTelemetryOverlayProps> =
       <div className="p-3 border-t border-slate-900 bg-slate-950 flex items-center justify-between text-[10px] text-slate-500">
         <div className="flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
-          <span>REAL-TIME TELEMETRIC LINK: 24ms LATENCY</span>
+          <span>SIMULATED TELEMETRY LINK · GENERATED LATENCY</span>
         </div>
         <button
           onClick={() => {

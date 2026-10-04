@@ -350,7 +350,7 @@ export const LiveResourceFeed: React.FC<LiveResourceFeedProps> = ({
           <div className="flex items-center gap-2">
             <span className="font-bold text-white tracking-wider text-xs flex items-center gap-1.5">
               <Radio className="w-3.5 h-3.5 text-red-400" />
-              <span>LIVE RESOURCE FEED · CAL FIRE STATEWIDE DISPATCH NET</span>
+              <span>SIMULATED RESOURCE FEED · SYNTHETIC STATEWIDE SCENARIO</span>
             </span>
             <span className="px-1.5 py-0.2 rounded bg-red-950 border border-red-500/70 text-[9px] font-bold text-red-300">
               DISPATCH STREAM ACTIVE

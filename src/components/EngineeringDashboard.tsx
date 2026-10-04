@@ -147,13 +147,13 @@ export const EngineeringDashboard: React.FC<EngineeringDashboardProps> = ({
       author: 'Nicholas Marnocha',
       category: 'Algorithms',
       context:
-        'Wildfire incidents involve concurrent competing requests for limited VLAT (Very Large Air Tanker) and Helitack assets. Naive closest-resource dispatch creates severe sub-optimal resource starvation and violates NWCG PMS 505 pilot duty limits.',
+        'Concurrent incidents can create competing requests for limited aviation resources. A closest-resource baseline does not account for every modeled feasibility constraint.',
       decision:
         'Model air resource allocation as a multi-objective constraint satisfaction problem using Google OR-Tools CP-SAT principles (as proven in Nicholas’s Tankerline project), optimizing retardant throughput while respecting turnaround SLAs.',
       consequences: {
         pros: [
-          '+23.4% faster resource commitment and higher total retardant capacity delivered.',
-          'Strict mathematical enforcement of CISRM 2026 airspace separation and pilot flight hour maximums.',
+          'Produces an inspectable comparison with a closest-resource baseline.',
+          'Applies explicit scenario constraints before ranking feasible assignments.',
           'Deterministic reproducible optimization logs for post-incident aviation audits.',
         ],
         cons: [
@@ -201,12 +201,12 @@ export const EngineeringDashboard: React.FC<EngineeringDashboardProps> = ({
       author: 'Nicholas Marnocha',
       category: 'Spatial GIS',
       context:
-        'Displaying 2,200+ simulated wildfire hotspots, aircraft trails, Victor airways, and Santa Ana wind barbs in React DOM nodes drops frame rates below 15 FPS and stalls user interaction.',
+        'Displaying a high density of generated hotspots, aircraft trails, airways, and wind barbs as React DOM nodes creates unnecessary reconciliation overhead.',
       decision:
         'Implement a custom HTML5 Canvas 2D rendering loop with HiDPI scaling, mathematical coordinate projection (`projectGeo`), phosphor sweep persistence, and 32px hit-box hit-testing.',
       consequences: {
         pros: [
-          'Rock-solid 60 FPS rendering regardless of target density (2,200+ markers).',
+          'Keeps frequently redrawn geometry out of the React DOM.',
           'Eliminates external map tile loading dependencies and tile licensing fees.',
           'Authentic military/tactical CRT HUD aesthetics with sub-pixel vector trails.',
         ],
@@ -233,7 +233,7 @@ export const EngineeringDashboard: React.FC<EngineeringDashboardProps> = ({
         'Enforce a two-tier defense: non-fatal missing values (fuel, turnaround) are imputed using calibrated rolling medians and tagged with `is_imputed=true`; corrupt packets missing airframe IDs are diverted to an isolated dead-letter store without crashing the pipeline.',
       consequences: {
         pros: [
-          '99.98% clean delivery rate achieved with zero pipeline crashes.',
+          'Separates accepted, imputed, and quarantined demonstration records.',
           'Complete audit trail: imputed records remain distinguishable from pure sensor feeds.',
           'Guaranteed test coverage enforced through automated Vitest tests.',
         ],

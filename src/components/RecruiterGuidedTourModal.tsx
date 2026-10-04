@@ -60,13 +60,13 @@ export const RecruiterGuidedTourModal: React.FC<RecruiterGuidedTourModalProps> =
       title: 'Full-Stack Spatial Telemetry & Sub-Second Latency',
       badge: 'Systems Architecture',
       category: 'architecture',
-      subtitle: 'HTML5 Canvas 2D Engine · 2,200+ Tactical Blips · WebSocket State Hub',
+      subtitle: 'HTML5 Canvas 2D Engine · Generated Tactical Objects · WebSocket State Hub',
       description:
-        'AxiomBI streams live CAL FIRE mixed-fleet aviation telemetry, NASA FIRMS thermal hotspots, and surface wind vectors. The UI renders 2,200+ simultaneous targets at 60 FPS via custom HTML5 Canvas without DOM bloat, paired with real-time bidirectional WebSockets for collaborative multi-user war room telemetry.',
+        'OSIRIS renders generated aircraft, incident, and wind objects with a custom HTML5 Canvas and synchronizes demonstration state through a local bidirectional WebSocket server. No agency or satellite feed is connected.',
       metrics: [
-        { label: 'Render Latency', value: '16.6ms (60 FPS)', hint: 'Canvas HiDPI rasterization' },
-        { label: 'Simultaneous Targets', value: '2,200+', hint: 'Surge simulation capacity' },
-        { label: 'WebSocket Sync', value: '<45ms', hint: 'Collaborative state broadcast' },
+        { label: 'Renderer', value: 'Canvas 2D', hint: 'HiDPI rasterization' },
+        { label: 'Icon Classes', value: '10', hint: 'Generated scenario symbology' },
+        { label: 'State Channel', value: 'WebSocket', hint: 'Local collaborative broadcast' },
       ],
       technicalHighlights: [
         'Custom geospatial projection (projectGeo) mapping Lat/Lng coordinates directly into viewport canvas coordinate space.',
@@ -77,19 +77,19 @@ export const RecruiterGuidedTourModal: React.FC<RecruiterGuidedTourModalProps> =
       tabActionLabel: 'Inspect OSIRIS Tactical Radar',
       recruiterQuestion: 'Why build a custom Canvas engine instead of dropping in standard Leaflet or Mapbox tiles?',
       candidateAnswerPitch:
-        'In high-tempo aerial fire attack, pilots and dispatchers cannot tolerate 2-second map tile loading latency or 3,000 React DOM nodes re-rendering every second. A pure Canvas 2D engine allows instantaneous mathematical transforms, CRT phosphor sweep simulations, and 60 FPS rendering under intense hardware constraints.',
+        'Canvas keeps frequently redrawn scenario objects out of the React DOM and supports mathematical transforms, custom hit testing, and the CRT-inspired visual treatment. Performance claims are deferred until a reproducible benchmark harness is published.',
     },
     {
       title: 'Resilient ETL Pipeline & Schema Drift Defense',
       badge: 'Data Engineering',
       category: 'data_eng',
-      subtitle: 'Postgres & ADS-B Ingestion · Dead-Letter Quarantine · 99.98% Clean Delivery',
+      subtitle: 'Generated Ingestion · Schema Validation · Dead-Letter Quarantine',
       description:
         'The continuous ingestion pipeline extracts transponder bursts and base load tickets. It enforces strict ISO schemas, quarantines corrupt payloads into a dead-letter store without halting downstream processing, and imputes nulls using historical rolling medians.',
       metrics: [
-        { label: 'Rows Ingested', value: '4.82M MTD', hint: 'Postgres CDC + Flight APIs' },
-        { label: 'Clean Delivery', value: '99.98%', hint: 'Zero unmapped schema halts' },
-        { label: 'Quarantine Speed', value: '<240ms', hint: 'Dead-letter isolation stage' },
+        { label: 'Input', value: 'Synthetic', hint: 'Generated scenario records' },
+        { label: 'Validation', value: 'Typed', hint: 'Schema gates before downstream stages' },
+        { label: 'Failure Path', value: 'Quarantine', hint: 'Dead-letter isolation stage' },
       ],
       technicalHighlights: [
         '4-stage decoupled ETL pipeline: Ingestion -> Schema Validation -> CP-SAT Transformation -> Data Mart Load.',
@@ -106,13 +106,13 @@ export const RecruiterGuidedTourModal: React.FC<RecruiterGuidedTourModalProps> =
       title: 'Mathematical Optimization & CP-SAT Dispatch',
       badge: 'Operations Research',
       category: 'optimization',
-      subtitle: 'Google OR-Tools CP-SAT · Multi-Objective Constraints · +23.4% SLA Gain',
+      subtitle: 'Constraint Modeling · Multi-Objective Scenarios · Reproducible Inputs',
       description:
-        'Replaces naive closest-resource dispatch heuristics with constraint satisfaction models taking into account pilot duty limits (NWCG PMS 505), retardant payload drop systems, base queue bottlenecks, and terrain approach angles.',
+        'Explores how a constraint model can compare assignments while accounting for scenario duty windows, payloads, queues, and protected assignments. It is decision-support research, not an operational dispatch engine.',
       metrics: [
-        { label: 'Efficiency Gain', value: '+23.4%', hint: 'vs closest-resource baseline' },
-        { label: 'Avg Turnaround', value: '16.2 mins', hint: '19.0% better than 20m SLA' },
-        { label: 'SLA Compliance', value: '94.8%', hint: 'Rolling 30-day window' },
+        { label: 'Comparison', value: 'Baseline', hint: 'Closest-resource scenario' },
+        { label: 'Constraints', value: 'Explicit', hint: 'Inspectable hard constraints' },
+        { label: 'Inputs', value: 'Synthetic', hint: 'Reproducible scenario data' },
       ],
       technicalHighlights: [
         'CP-SAT multi-objective optimization balancing flight time, pump line wait times, and airframe turnaround.',

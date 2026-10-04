@@ -206,7 +206,7 @@ export const AutomatedReporting: React.FC<AutomatedReportingProps> = ({
             <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
             <span>{pdfSuccessToast}</span>
           </div>
-          <span className="text-[10px] text-emerald-400/80 uppercase">TOP SECRET // TACTICAL PDF SAVED</span>
+          <span className="text-[10px] text-emerald-400/80 uppercase">SIMULATION REPORT // PDF SAVED</span>
         </div>
       )}
 
