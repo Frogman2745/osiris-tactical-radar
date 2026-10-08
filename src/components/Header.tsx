@@ -67,64 +67,16 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 px-4 sm:px-6 py-3">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
         
-        {/* Left Section: AxiomBI Brand Wordmark + Category Slide Bar */}
-        <div className="flex items-center min-w-0 flex-1">
-          {/* Zone 1: Single text element wordmark */}
+        {/* Primary row: brand + system actions */}
+        <div className="flex items-center shrink-0">
           <button 
             onClick={() => onTabChange('pipelines')}
-            className="text-lg font-bold tracking-tight text-white hover:text-cyan-400 transition-colors shrink-0 text-left cursor-pointer mr-6 sm:mr-8"
+            className="text-lg font-bold tracking-tight text-white hover:text-cyan-400 transition-colors shrink-0 text-left cursor-pointer"
           >
             AxiomBI
           </button>
-
-          {/* Zone 2: Slide Bar for Categories next to AxiomBI */}
-          <div className="relative flex items-center min-w-0 max-w-full group">
-            {/* Scroll Left Button */}
-            {canScrollLeft && (
-              <button
-                onClick={() => scrollNav('left')}
-                className="absolute left-0 z-20 w-6 h-7 rounded-l bg-slate-950/90 hover:bg-slate-800 border-y border-l border-slate-800 text-slate-400 hover:text-cyan-400 flex items-center justify-center transition-colors cursor-pointer shadow-md backdrop-blur-sm"
-                aria-label="Scroll left categories"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-            )}
-
-            {/* Scrollable Container (Slide Bar) */}
-            <div
-              ref={navScrollRef}
-              onScroll={checkScroll}
-              className="flex items-center gap-2 sm:gap-4 overflow-x-auto no-scrollbar scroll-smooth py-1 px-1"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
-              {navCategories.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => onTabChange(cat.id)}
-                  className={`whitespace-nowrap transition-all cursor-pointer px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium border shrink-0 ${
-                    activeTab === cat.id
-                      ? 'bg-cyan-950/80 border-cyan-500/70 text-cyan-300 font-semibold shadow-sm shadow-cyan-950'
-                      : 'bg-slate-900/40 border-slate-800/80 text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Scroll Right Button */}
-            {canScrollRight && (
-              <button
-                onClick={() => scrollNav('right')}
-                className="absolute right-0 z-20 w-6 h-7 rounded-r bg-slate-950/90 hover:bg-slate-800 border-y border-r border-slate-800 text-slate-400 hover:text-cyan-400 flex items-center justify-center transition-colors cursor-pointer shadow-md backdrop-blur-sm"
-                aria-label="Scroll right categories"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            )}
-          </div>
         </div>
 
         {/* Zone 3: Primary System Actions & Presence */}
@@ -244,21 +196,48 @@ export const Header: React.FC<HeaderProps> = ({
 
       </div>
 
-      {/* Mobile nav drawer */}
-      <div className="lg:hidden flex items-center gap-2 overflow-x-auto pt-2.5 pb-1 border-t border-slate-900 mt-2 text-xs">
-        {navCategories.map((cat) => (
+      {/* Dedicated navigation row keeps every workspace reachable at all widths. */}
+      <div className="max-w-7xl mx-auto relative flex items-center min-w-0 mt-2.5 pt-2 border-t border-slate-900 group">
+        {canScrollLeft && (
           <button
-            key={cat.id}
-            onClick={() => onTabChange(cat.id)}
-            className={`px-2.5 py-1 rounded whitespace-nowrap transition-colors ${
-              activeTab === cat.id
-                ? 'bg-cyan-500/10 text-cyan-300 font-semibold'
-                : 'text-slate-400 hover:text-slate-200'
-            }`}
+            onClick={() => scrollNav('left')}
+            className="absolute left-0 z-20 w-7 h-8 rounded-l bg-slate-950/95 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-cyan-400 flex items-center justify-center transition-colors cursor-pointer shadow-md backdrop-blur-sm"
+            aria-label="Scroll left categories"
           >
-            {cat.label}
+            <ChevronLeft className="w-4 h-4" />
           </button>
-        ))}
+        )}
+
+        <div
+          ref={navScrollRef}
+          onScroll={checkScroll}
+          className="flex w-full items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth px-1 pb-0.5"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {navCategories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => onTabChange(cat.id)}
+              className={`whitespace-nowrap transition-all cursor-pointer px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium border shrink-0 ${
+                activeTab === cat.id
+                  ? 'bg-cyan-950/80 border-cyan-500/70 text-cyan-300 font-semibold shadow-sm shadow-cyan-950'
+                  : 'bg-slate-900/40 border-slate-800/80 text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+
+        {canScrollRight && (
+          <button
+            onClick={() => scrollNav('right')}
+            className="absolute right-0 z-20 w-7 h-8 rounded-r bg-slate-950/95 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-cyan-400 flex items-center justify-center transition-colors cursor-pointer shadow-md backdrop-blur-sm"
+            aria-label="Scroll right categories"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        )}
       </div>
     </header>
   );
